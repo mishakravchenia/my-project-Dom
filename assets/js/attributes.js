@@ -6,6 +6,7 @@ const user = {
   nickname: "super dev",
   likesCount: 10,
 };
+//при натисканні на кнопку "Завантажити" додати інфо про користувача в <article></article>
 const downloadButton = document.querySelector("#downloadButton");
 downloadButton.onclick = function () {
   const userInfoEl = document.querySelector("#userProfile");
@@ -31,7 +32,7 @@ downloadButton.onclick = function () {
   imgFotoEl.style.width = "100px";
   imgFotoEl.style.height = "100px";
   const userBirthday = document.querySelector("#userBirthday");
-
+  //при наведенні на дату народження показувати кількість повних років.
   function calculateAge(birthday) {
     let ageUser = new Date().getFullYear() - birthday.getFullYear();
     return ageUser;
@@ -43,26 +44,12 @@ downloadButton.onclick = function () {
   userBirthday.onmouseleave = () => {
     userBirthday.innerHTML = `birthday: ${user.birthday.toDateString()}`;
   };
+
+  //при натисканні на сердечко перефарбувати його в червоний колір.
+  const buttonHeart = document.querySelector(".heartIcon");
+
+  function colorChange(e) {
+    buttonHeart.style.color = "red";
+  }
+  buttonHeart.onclick = colorChange;
 };
-// //
-const buttonHeart = document.querySelector(".heartIcon");
-
-function colorChange(e) {
-  buttonHeart.style.color = "red";
-}
-buttonHeart.onclick = colorChange;
-//
-// const userBirthday = document.querySelector("#userBirthday");
-
-// function calculateAge(birthday) {
-//   let ageUser = new Date().getFullYear() - birthday.getFullYear();
-//   return ageUser;
-// }
-// userBirthday.onmouseenter = () => {
-//   const age = calculateAge(user.birthday);
-//   userBirthday.innerHTML = `birthday: age: ${age}`;
-// };
-// userBirthday.onmouseleave = () => {
-//   userBirthday.innerHTML = `birthday: ${user.birthday.toDateString()}`;
-// };
-//
