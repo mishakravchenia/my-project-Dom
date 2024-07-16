@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Пагінація користувачів</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
-    <script defer src="./assets/js/json.js"></script>
-    <title>Document</title>
-  </head>
+    <link rel="stylesheet" href="assets/css/style.css" />
+<script defer src="./assets/js/index.js"></script>
+      </head>
   <body>
-    <article>
-      <button id="bt">Downland</button>
-      <p id="cat-fact"></p>
-    </article>
+    <div id="controls">
+      <h1>Кількість результатів на сторінці</h1>
+      <input type="number" id="resultsPerPage" value="8" min="1" max="50" />
+    </div>
+    <div id="root"></div>
+    <div class="conteiner">
+      <button class="navBtn" id="prevBtn"><<</button>
+      <button class="navBtn" id="nextBtn">>></button>
+    </div>
   </body>
 </html>
